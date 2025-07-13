@@ -1,11 +1,13 @@
 /* See the Tailwind configuration guide for advanced usage
    https://tailwindcss.com/docs/configuration */
 
-@import "tailwindcss" source(none);
+/* @import "tailwindcss" source(none); */
 @source "../css";
 @source "../js";
 @source "../../lib/mascarpone_web";
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /* A Tailwind plugin that makes "hero-#{ICON}" classes available.
    The heroicons installation itself is managed by your mix.exs */
 @plugin "../vendor/heroicons";
@@ -100,3 +102,10 @@
 [data-phx-root-id] { display: contents }
 
 /* This file is for your main application CSS */
+#message-list {
+  border: 1px solid #777;
+  height: 400px;
+  padding: 10px;
+  overflow: scroll;
+  margin-bottom: 50px;
+}

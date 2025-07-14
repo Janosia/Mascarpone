@@ -7,6 +7,19 @@
 # General application configuration
 import Config
 
+config :mascarpone, :scopes,
+  cheese_bytes: [
+    default: true,
+    module: Mascarpone.Accounts.Scope,
+    assign_key: :current_scope,
+    access_path: [:cheese_bytes, :id],
+    schema_key: :cheese_bytes_id,
+    schema_type: :id,
+    schema_table: :users,
+    test_data_fixture: Mascarpone.AccountsFixtures,
+    test_login_helper: :register_and_log_in_cheese_bytes
+  ]
+
 config :mascarpone,
   ecto_repos: [Mascarpone.Repo],
   generators: [timestamp_type: :utc_datetime]
